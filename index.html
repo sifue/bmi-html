@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BMI計算</title>
+</head>
+<body>
+
+  <p>体重(kg): <input type="text" id="weight" value="60"></p>
+  <p>身長(cm): <input type="text" id="height" value="165"></p>
+  <button id="calc">計算する</button>
+  <p>BMIは、<span id="bmi">xxx</span>です。</p>
+
+  <script>
+    const weight = document.getElementById('weight');
+    const height = document.getElementById('height');
+    const bmi = document.getElementById('bmi');
+    const button = document.getElementById('calc');
+    button.onclick = function(e) {
+      const bmiValue = parseInt(weight.value, 10) / ((parseInt(height.value, 10) / 100) * (parseInt(height.value, 10) / 100));
+      console.log(bmiValue);
+      bmi.innerText = bmiValue;
+    };
+  </script>
+</body>
+</html>
